@@ -38,9 +38,9 @@ lista4[-1] = "oso"
 print(lista4)
 
 # 5) Analizar el siguiente programa y explicar con tus palabras qué es lo que realiza.
-# numeros = [8, 15, 3, 22, 7]
-# numeros.remove(max(numeros))
-# print(numeros)
+numeros = [8, 15, 3, 22, 7]
+numeros.remove(max(numeros))
+print(numeros)
 
 #Mi explicacion: Se crea una lista llamada numeros, y mediante el metodo numeros.remove(max(numeros)) se eliminara el elemento que represente el  mas grande de la lista.
 
