@@ -82,13 +82,13 @@ print("Binario:", binario if binario else "0")
 
 
 
+# 5) Implementá una función recursiva llamada es_palindromo(palabra) que reciba una
+# cadena de texto sin espacios ni tildes, y devuelva True si es un palíndromo o False si no
+# lo es.
+# Requisitos:
+# La solución debe ser recursiva.
+# No se debe usar [::-1] ni la función reversed().
 
-
-
-✅ 5) Palíndromo recursivo (sin [::-1])
-python
-Copiar
-Editar
 def es_palindromo(palabra):
     if len(palabra) <= 1:
         return True
@@ -96,44 +96,67 @@ def es_palindromo(palabra):
         return False
     return es_palindromo(palabra[1:-1])
 
-# Ejemplo de uso
+
 texto = input("Ingrese una palabra: ").lower()
 print("¿Es palíndromo?", es_palindromo(texto))
-✅ 6) Suma de dígitos (sin strings)
-python
-Copiar
-Editar
+
+
+# 6) Escribí una función recursiva en Python llamada suma_digitos(n) que reciba un
+# número entero positivo y devuelva la suma de todos sus dígitos.
+# Restricciones:
+# No se puede convertir el número a string.
+# Usá operaciones matemáticas (%, //) y recursión.
+# Ejemplos:
+# suma_digitos(1234) → 10 (1 + 2 + 3 + 4)
+# suma_digitos(9) → 9
+# suma_digitos(305) → 8 (3 + 0 + 5)
+
+
 def suma_digitos(n):
     if n < 10:
         return n
     return (n % 10) + suma_digitos(n // 10)
 
-# Ejemplo de uso
 numero = int(input("Ingrese un número para sumar sus dígitos: "))
 print("Suma de dígitos:", suma_digitos(numero))
-✅ 7) Bloques de pirámide
-python
-Copiar
-Editar
+
+
+
+
+
+# 7) Un niño está construyendo una pirámide con bloques. En el nivel más bajo coloca n
+# bloques, en el siguiente nivel uno menos (n - 1), y así sucesivamente hasta llegar al
+# último nivel con un solo bloque.
+
+# Escribí una función recursiva contar_bloques(n) que reciba el número de bloques en el
+# nivel más bajo y devuelva el total de bloques que necesita para construir toda la
+# pirámide.
+
 def contar_bloques(n):
     if n == 1:
         return 1
-    return n + contar_bloques(n - 1)
+    return n + contar_bloques(n-1)
 
-# Ejemplo de uso
+
 niveles = int(input("Ingrese cantidad de bloques en la base: "))
 print("Total de bloques necesarios:", contar_bloques(niveles))
-✅ 8) Contar cuántas veces aparece un dígito
-python
-Copiar
-Editar
+
+
+
+# 8) Escribí una función recursiva llamada contar_digito(numero, digito) que reciba un
+# número entero positivo (numero) y un dígito (entre 0 y 9), y devuelva cuántas veces
+# aparece ese dígito dentro del número.
+# Ejemplos:
+# contar_digito(12233421, 2) → 3
+# contar_digito(5555, 5) → 4
+
+
 def contar_digito(numero, digito):
     if numero == 0:
         return 0
     actual = 1 if numero % 10 == digito else 0
     return actual + contar_digito(numero // 10, digito)
 
-# Ejemplo de uso
-num = int(input("Ingrese un número: "))
-dig = int(input("Ingrese el dígito a contar: "))
-print(f"El dígito {dig} aparece {contar_digito(num, dig)} veces.")
+numero = int(input("Ingrese un número: "))
+digito = int(input("Ingrese el dígito a contar: "))
+print(f"El dígito {digito} aparece {contar_digito(numero, digito)} veces.")
