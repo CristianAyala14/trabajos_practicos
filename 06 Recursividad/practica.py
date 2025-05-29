@@ -56,6 +56,7 @@ def es_primo(numero):
   for i in range(2, int(numero**0.5) + 1):
     if numero % i == 0:
       return False
+    
   return True
 
 def sum_n_primos(num):
@@ -65,3 +66,45 @@ def sum_n_primos(num):
     return num + sum_n_primos(num-1)
   else:
     return sum_n_primos(num-1)
+  
+
+# 3) Crea una función recursiva que calcule la potencia de un número base elevado a un
+# exponente, utilizando la fórmula n**m = n ∗ n**(m−1)
+# Prueba esta función en un algoritmo general.
+
+def potencia(base, exponente):
+    if exponente == 0:
+        return 1
+    return base * potencia(base, exponente - 1)
+
+
+# potencia(3,3)
+# = base * potencia(3,2)
+# = 3 * potencia(3,2)
+
+# potencia(3,2)
+# = base * potencia(3,1)
+# = 3 * potencia(3,1)
+
+# potencia(3,1)
+# = base * potencia(3,0)
+# = 3 * potencia(3,0)
+
+# potencia(3,0) = 1 CASO BASE
+
+#ahora de abajo hacia arriba:
+
+# potencia(3, 1)
+# = 3 * potencia(3, 0)
+# = 3 * 1
+# = 3
+
+# potencia(3, 2)
+# = 3 * potencia(3, 1)
+# = 3 * 3
+# = 9
+
+# potencia(3, 3)
+# = 3 * potencia(3, 2)
+# = 3 * 9
+# = 27
