@@ -160,3 +160,7 @@ def contar_digito(numero, digito):
 numero = int(input("Ingrese un número: "))
 digito = int(input("Ingrese el dígito a contar: "))
 print(f"El dígito {digito} aparece {contar_digito(numero, digito)} veces.")
+
+
+
+
